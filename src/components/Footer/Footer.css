@@ -40,9 +40,11 @@
 }
 .footer-bioImg {
   /* border: solid gold; */
-  width: 200px;
+  width: 180px;
   height: 80px;
   overflow: hidden;
+  border-radius: 10px;
+
 }
 .footer-bioImg > a > img {
   background-color: white;
