@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
