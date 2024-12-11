@@ -1,4 +1,3 @@
-import Image from "next/image";
 import "./HomeServices.css";
 import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";

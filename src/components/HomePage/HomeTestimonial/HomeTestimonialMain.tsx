@@ -92,7 +92,7 @@ export default function HomeTestimonialMain() {
               <Image src={rating} alt="" />
             </div>
             <div className="homeTestimonialMain-item">
-              <p>"{x.para}"</p>
+              <p>{x.para}</p>
             </div>
             <div className="homeTestimonialMain-item">
               <div className="homeTestimonialMain-itemWrapper">

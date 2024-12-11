@@ -39,18 +39,7 @@ export default function HomeHeaderClient() {
     },
   };
 
-  const [showDots, setShowDots] = useState(true);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setShowDots(window.innerWidth > 768); // Adjust the width as needed
-    };
-
-    handleResize(); // Check initial size
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   return (
     <div className="homeHeader-client">
       <div className="homeHeader-clientContent">
