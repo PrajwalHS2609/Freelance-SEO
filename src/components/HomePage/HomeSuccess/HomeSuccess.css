@@ -1,0 +1,79 @@
+.homeSuccess-container {
+  width: 100%;
+  background: url("https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/09/Hero-Bg-1-2-1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+}
+.homeSuccessMain-container {
+  /* border: solid red; */
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.homeSuccessMain-content {
+  /* border: solid blue; */
+  width: 30%;
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 50px;
+  font-weight: bold;
+  gap: 10px;
+}
+.homeSuccessMain-content > h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.homeSuccessHead-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.homeSuccessHead-container > h6 {
+  color: var(--customColor);
+  font-size: 15px;
+}
+.homeSuccessHead-container > h2 {
+  color: white;
+  font-size: 40px;
+}
+.homeSuccessHead-container > p {
+  color: white;
+  font-size: 18px;
+  width: 80%;
+  text-align: center;
+}
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .homeSuccessMain-container {
+    /* border: solid red; */
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .homeSuccessMain-content {
+    /* border: solid blue; */
+    width: 100%;
+    height: 100%;
+  }
+  .homeSuccessHead-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .homeSuccessHead-container > h2 {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+  }
+}

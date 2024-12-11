@@ -1,0 +1,127 @@
+.homeTestimonial-container {
+  /* border: solid red; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--customWhite);
+}
+.homeTestimonialHead-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.homeTestimonialHead-container > h6 {
+  color: var(--customColor);
+  font-size: 15px;
+}
+.homeTestimonialHead-container > h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+.homeTestimonialMain-container {
+  /* border: solid blue; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.homeTestimonialMain-container > div {
+  /* border: solid green; */
+  width: 700px;
+  height: 450px;
+}
+.homeTestimonialMain-content {
+  /* border: solid red; */
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+  background-color: var(--customColor);
+  border-radius: 10px;
+}
+.homeTestimonialMain-item {
+  /* border: solid yellowgreen; */
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+.homeTestimonialMain-item > img {
+  width: 100px;
+  width: 100px;
+  object-fit: contain;
+}
+.homeTestimonialMain-item:nth-child(2) {
+  height: 50%;
+}
+.homeTestimonialMain-item > p {
+  font-size: 18px;
+  text-align: justify;
+}
+.homeTestimonialMain-item:nth-child(1) {
+  height: 15%;
+}
+.homeTestimonialMain-item:nth-child(3) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeTestimonialMain-itemImg {
+  /* border: solid black; */
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  box-shadow: 0 0 10px black;
+  padding: 5px;
+  background-color: white;
+}
+.homeTestimonialMain-itemImg > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.homeTestimonialMain-itemName {
+  /* border: solid teal; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.homeTestimonialMain-itemWrapper {
+  /* border: solid red; */
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.homeTestimonialMain-itemQuote {
+  /* border: solid green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+.quote {
+  color: white;
+  font-size: 50px;
+}
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .homeTestimonialMain-container > div {
+    border: solid green;
+    width: 100%;
+    height: 450px;
+  }
+}

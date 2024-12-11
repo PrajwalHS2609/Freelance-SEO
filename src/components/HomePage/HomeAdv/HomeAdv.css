@@ -1,0 +1,104 @@
+.homeAdv-container {
+  /* border: solid red; */
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.homeAdvHead-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.homeAdvHead-container > h2 {
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+.homeAdvHead-container > p {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: justify;
+}
+.homeAdvMain-container {
+  /* border: solid blue; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.homeAdvMain-card {
+  /* border: solid yellowgreen; */
+  position: relative;
+  width: 115px;
+  height: 470px;
+  /* width: 360px;
+  height: 470px; */
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 300ms ease;
+}
+.homeAdvMain-card:hover {
+  width: 360px;
+  height: 470px;
+}
+.homeAdvMain-card > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.homeAdvMain-cardCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.355);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 300ms ease-in-out;
+}
+.homeAdvMain-cardCover:hover {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.homeAdvMain-cardCover > span {
+  transform: rotate(-90deg);
+  transition: 300ms ease-in-out;
+  width: 300px;
+  margin-top: 00px;
+}
+.homeAdvMain-cardCover:hover span {
+  transform: rotate(0deg);
+}
+.homeAdvMain-cardCover > span > h3 {
+  font-size: 25px;
+  color: white;
+}
+/* .homeAdvMain-cardCover:hover h3 {
+
+} */
+.homeAdvMain-cardCover:hover p {
+  display: flex;
+  /* visibility: visible; */
+  transition: 300ms ease-in-out 400ms;
+}
+.homeAdvMain-cardCover > p {
+  font-size: 18px;
+  color: grey;
+  display: none;
+  /* visibility:hidden; */
+}

@@ -1,0 +1,97 @@
+.homeSeoPractices-container {
+  /* border: solid red; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.homeSeoPractices-content {
+  /* border: solid green; */
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.homeSeoPractices-img {
+  /* border: solid black; */
+  border-radius: 15px;
+  /* overflow: hidden; */
+  width: 350px;
+  height: 100%;
+  position: relative;
+}
+.homeSeoPractices-img::after {
+  content: "";
+  background-color: var(--customColor);
+  transform: rotate(80deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  z-index: -1;
+}
+.homeSeoPractices-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.homeSeoPractices-mainContainer {
+  /* border: solid blue; */
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.homeSeoIcon {
+  background-color: var(--customColor);
+  color: white;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+.homeSeoPractices-mainContainer > ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.homeSeoPractices-mainContainer > ul > li {
+  list-style: none;
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 300px;
+  /* border: solid black; */
+}
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .homeSeoPractices-container {
+    /* border: solid red; */
+    flex-direction: column;
+    gap: 30px;
+  }
+  .homeSeoPractices-content {
+    /* border: solid green; */
+    width: 100%;
+    padding: 10px;
+  }
+  .homeSeoPractices-img {
+    /* border: solid black; */
+    /* overflow: hidden; */
+    width: 300px;
+    height: 100%;
+  }
+  .homeSeoPractices-mainContainer {
+    /* border: solid blue; */
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+}
