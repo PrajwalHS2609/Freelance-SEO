@@ -120,7 +120,7 @@
 /* --------------Responsive Menu----------------------- */
 .menu-content2 {
   /* border: solid red; */
-  display: flex;
+  display: none;
 }
 .menuIcon {
   color: var(--customColor);

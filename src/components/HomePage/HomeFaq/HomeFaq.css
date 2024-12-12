@@ -78,4 +78,8 @@
     /* border: solid green; */
     width: 100%;
   }
+  .homeFaqHead-container > h2 {
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
 }
