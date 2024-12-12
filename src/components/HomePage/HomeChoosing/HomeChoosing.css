@@ -119,7 +119,7 @@
   align-items: flex-start;
   flex-direction: column;
 }
-.homeChoosingMain-itemContainer:hover{
+.homeChoosingMain-itemContainer:hover {
   background-color: #ffb577;
 }
 .homeChoosingMain-itemContainer:hover .homeChoosingMain-item {
@@ -143,4 +143,56 @@
 .homeChoosingMain-itemContainer:hover .homeChoosing-icon {
   color: var(--customColor);
   transform: rotateY(180deg);
+}
+@media screen and (min-width: 320px) and (max-width: 990px) {
+  .homeChoosingHead > h2 {
+    font-size: 30px;
+    color: black;
+    text-align: center;
+  }
+  .homeChoosingMain-container {
+    /* border: solid blue; */
+    flex-direction: column;
+  }
+  .homeChoosingMain-content {
+    /* border: solid green; */
+    width: 100%;
+    height: 100%;
+  }
+
+  .homeChoosingMain-item {
+    /* border: solid black; */
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .homeChoosingMain-itemContainer {
+    /* border: solid yellowgreen; */
+    height: 100%;
+    width: 300px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .homeChoosingMain-itemTxt {
+    /* border: solid pink; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .homeChoosingMain-itemTxt > p {
+    color: grey;
+    text-align: justify;
+  }
 }

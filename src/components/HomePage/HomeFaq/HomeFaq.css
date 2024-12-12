@@ -73,3 +73,9 @@
   margin: 0;
   font-size: 18px;
 }
+@media screen and (min-width: 320px) and (max-width:768px) {
+  .homeFaq-content {
+    /* border: solid green; */
+    width: 100%;
+  }
+}

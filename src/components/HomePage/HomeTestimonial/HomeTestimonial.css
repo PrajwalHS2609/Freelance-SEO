@@ -119,9 +119,44 @@
   font-size: 50px;
 }
 @media screen and (min-width: 320px) and (max-width: 768px) {
-  .homeTestimonialMain-container > div {
-    border: solid green;
+  .homeTestimonialMain-item {
+    /* border: solid yellowgreen; */
     width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    color: white;
+  }
+  .homeTestimonialMain-container > div {
+    /* border: solid green; */
+    width: 700px;
+    height: 100%;
+  }
+  .homeTestimonialMain-content {
+    /* border: solid red; */
+    width: 100%;
+    height: 800px;
+  }
+  .homeTestimonialMain-item:nth-child(2) {
     height: 450px;
+  }
+  .homeTestimonialMain-itemWrapper {
+    /* border: solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .homeTestimonialMain-itemName {
+    /* border: solid teal; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .homeTestimonialMain-itemName > h3 {
+    text-align: center;
   }
 }

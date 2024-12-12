@@ -79,7 +79,6 @@
   transform: rotate(-90deg);
   transition: 300ms ease-in-out;
   width: 300px;
-  margin-top: 00px;
 }
 .homeAdvMain-cardCover:hover span {
   transform: rotate(0deg);
@@ -101,4 +100,29 @@
   color: grey;
   display: none;
   /* visibility:hidden; */
+}
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .homeAdvMain-container {
+    /* border: solid blue; */
+    flex-direction: column;
+  }
+  .homeAdvMain-card {
+    /* border: solid yellowgreen; */
+    width: 360px;
+    height: 470px;
+  }
+  .homeAdvMain-cardCover {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .homeAdvMain-cardCover > span {
+    transform: rotate(0deg);
+  }
+  .homeAdvMain-cardCover > p {
+    font-size: 18px;
+    color: grey;
+    display: flex;
+    /* visibility:hidden; */
+  }
 }
