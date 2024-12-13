@@ -137,8 +137,8 @@
   width: 100%;
 }
 .secondLayer > textarea {
-    border: solid 1px grey;
-    background-color: white;
+  border: solid 1px grey;
+  background-color: white;
   padding: 10px;
   outline: none;
   width: 100%;
@@ -181,4 +181,40 @@
 }
 .thirdLayer > button:hover::after {
   width: 100%;
+}
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .contactUsMain-container {
+    /* border: solid red; */
+    flex-direction: column;
+  }
+  .contactUsMain-content {
+    /* border: solid green; */
+    width: 100%;
+    padding: 10px;
+  }
+  .contactUsMain-wrapper {
+    flex-direction: column;
+  }
+  .contactUsMain-item:nth-child(1),
+.contactUsMain-item:nth-child(2) {
+  width: 100%;
+}
+  .firstLayer {
+    /* border: solid ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .firstLayer > input {
+    /* border: solid ; */
+    width: 100%;
+  }
+  .thirdLayer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

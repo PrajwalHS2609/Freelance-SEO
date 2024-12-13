@@ -19,27 +19,27 @@ export default function FooterBio() {
       </p>
       <div className="footer-bioSocial">
         <div className="footer-bioSocialItem">
-          <a href="\">
+          <a href="https://www.facebook.com/tryseoservices">
             <FaFacebook className="footerSocialIcons" />
           </a>
         </div>
         <div className="footer-bioSocialItem">
-          <a href="\">
+          <a href="https://www.youtube.com/@tryseoservices">
             <FaYoutube className="footerSocialIcons" />
           </a>
         </div>
         <div className="footer-bioSocialItem">
-          <a href="\">
+          <a href="https://www.instagram.com/tryseoservices/">
             <FaInstagram className="footerSocialIcons" />
           </a>
         </div>
         <div className="footer-bioSocialItem">
-          <a href="\">
+          <a href="https://www.linkedin.com/company/tryseoservices/posts/?feedView=all">
             <FaLinkedin className="footerSocialIcons" />
           </a>
         </div>
         <div className="footer-bioSocialItem">
-          <a href="\">
+          <a href="https://x.com/tryseoservices">
             <FaXTwitter className="footerSocialIcons" />
           </a>
         </div>

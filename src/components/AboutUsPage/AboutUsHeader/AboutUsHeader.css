@@ -1,0 +1,42 @@
+.aboutUsHeader-container {
+    /* border: solid red; */
+    width: 100%;height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+  .aboutUsHeader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .aboutUsHeader-wrapper>h2{
+    font-size: 60px;
+  }
+  .aboutUsHeader-ball {
+    /* border: solid red; */
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:100px;
+    left: 30px;
+    z-index: -1;
+    background: radial-gradient(circle at top, white, #fd8643);
+    box-shadow: 0 20px 20px black;
+    animation: ball infinite linear alternate 5s;
+  }
+  @keyframes ball {
+    from {
+      transform: translateY(-30px);
+    }
+    to {
+      transform: translateY(30px);
+    }
+  }
