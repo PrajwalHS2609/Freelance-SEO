@@ -1,0 +1,19 @@
+.breadCrumb {
+  /* border: solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.breadCrumb > a {
+  color: var(--customColor);
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.breadCrumb > span {
+  font-size: 18px;
+  font-weight: 500;
+}
