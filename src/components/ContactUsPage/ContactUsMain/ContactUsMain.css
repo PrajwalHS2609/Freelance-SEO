@@ -1,0 +1,184 @@
+.contactUsMain-container {
+  /* border: solid red; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.contactUsMain-content {
+  /* border: solid green; */
+  width: 45%;
+  padding: 10px;
+}
+.contactUsMain-headContainer {
+  /* border: solid blue; */
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+.contactUsMain-headContainer > h6 {
+  color: var(--customColor);
+  position: relative;
+}
+.contactUsMain-headContainer > h6::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  width: 80%;
+  border-top: solid var(--customColor);
+}
+.contactUsMain-headContainer > h2 {
+  color: black;
+}
+.contactUsMain-headContainer > p {
+  font-size: 18px;
+  color: black;
+}
+.contactUsMain-item {
+  /* border: solid black; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--customColor);
+  padding: 10px;
+  border-radius: 10px;
+}
+.contactUsMain-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.contactUsMain-item:nth-child(1),
+.contactUsMain-item:nth-child(2) {
+  width: 45%;
+}
+.contactUsMain-item > span {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 10px;
+  width: 80%;
+}
+.contactUsMain-item > span > a {
+  color: white;
+  text-decoration: none;
+}
+.contactUsMain-item > span > p {
+  color: white;
+}
+.contactUsMain-icon {
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  color: var(--customColor);
+  background-color: white;
+}
+/* ------------------ContactUs Form-------------------------------- */
+.contactUsForm {
+  /* border: solid red; */
+  padding: 10px;
+  box-shadow: 0 0 10px grey;
+  border-radius: 10px;
+  padding: 20px;
+}
+.contactUsForm > h6 {
+  color: var(--customColor);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  text-align: start;
+  width: 100%;
+}
+.contactUsForm > h6::before {
+  content: "•";
+  font-size: 20px;
+  color: var(--customColor);
+}
+.contactUsForm > h6::after {
+  content: "•";
+  font-size: 20px;
+  color: rgb(0, 174, 255);
+}
+.contactUsForm > h3 {
+  font-size: 25px;
+}
+.contactUsForm > form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+.firstLayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.firstLayer > input {
+  border: solid 1px grey;
+  outline: none;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  gap: 10px;
+}
+.secondLayer {
+  width: 100%;
+}
+.secondLayer > textarea {
+    border: solid 1px grey;
+    background-color: white;
+  padding: 10px;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+}
+.thirdLayer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.thirdLayer > button {
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--customColor);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.thirdLayer > button::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: radial-gradient(
+    465px at -15.1% -25%,
+    rgb(11, 18, 236) 0%,
+    rgb(67, 166, 238) 49%,
+    rgb(126, 203, 244) 90.2%
+  );
+  transition: 300ms ease-in-out;
+  z-index: -1;
+}
+.thirdLayer > button:hover::after {
+  width: 100%;
+}
