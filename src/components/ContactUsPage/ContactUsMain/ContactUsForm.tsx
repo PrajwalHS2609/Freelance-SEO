@@ -1,6 +1,12 @@
 "use client";
+import { useState } from "react";
 import "./ContactUsMain.css";
 export default function ContactUsForm() {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(event.target.checked);
+  };
   const onSubmit = () => {};
   return (
     <div className="contactUsForm">
@@ -48,11 +54,19 @@ export default function ContactUsForm() {
         </div>
         <div className="privacy">
           {" "}
-          <input type="checkbox" name="check" id="check" required checked />I
-          give my consent to freelanceseo.Com's Digital Marketing team to reach
-          out to me with updates and notifications through Email, SMS, WhatsApp,
-          and Voice Calls, in accordance with their Privacy Policy. This
-          authorization supersedes any registration under DNC/NDNC guidelines.
+          <input
+            type="checkbox"
+            name="check"
+            id="check"
+            required
+            checked={isChecked}
+            onChange={handleCheckboxChange}
+          />
+          I give my consent to freelanceseo.Com's Digital Marketing team to
+          reach out to me with updates and notifications through Email, SMS,
+          WhatsApp, and Voice Calls, in accordance with their Privacy Policy.
+          This authorization supersedes any registration under
+          DNC/NDNC guidelines.
         </div>
       </form>
     </div>

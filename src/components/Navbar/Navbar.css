@@ -115,7 +115,9 @@
   color: var(--customColor);
   transform: translateX(10px);
 }
-
+.serviceIco{
+  color: var(--customColor);font-size: 30px;
+}
 /* --------------Responsive Menu----------------------- */
 .menu-content2 {
   /* border: solid red; */

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { MdMenu } from "react-icons/md";
 import { AiOutlinePlus } from "react-icons/ai";
 import { HiMiniXMark } from "react-icons/hi2";
-
+import { MdKeyboardArrowDown } from "react-icons/md";
 import { useRef, useState } from "react";
 import logo from "./logo/TSS.png";
 import Image from "next/image";
@@ -56,30 +56,30 @@ const Menu = () => {
     }
   };
   const serviceMenu = [
-    { id: "1", pathName: "/services/seo-services-in-bangalore", menu: "SEO" },
+    { id: "1", pathName: "/seo-services-in-bangalore", menu: "SEO" },
     {
       id: "2",
-      pathName: "/services/on-page-seo-services-in-bangalore",
+      pathName: "/on-page-seo-services-in-bangalore",
       menu: "On-Page SEO",
     },
     {
       id: "3",
-      pathName: "/services/off-page-seo-services-in-bangalore",
+      pathName: "/off-page-seo-services-in-bangalore",
       menu: "Off-Page SEO",
     },
     {
       id: "4",
-      pathName: "/services/seo-auditing-services-in-bangalore",
+      pathName: "/seo-auditing-services-in-bangalore",
       menu: "SEO Auditing",
     },
     {
       id: "5",
-      pathName: "/services/seo-consultation-services-in-bangalore",
+      pathName: "/seo-consultation-in-bangalore",
       menu: "SEO Consultation",
     },
     {
       id: "6",
-      pathName: "/services/local-seo-services-in-bangalore",
+      pathName: "/gmb-page-optimization-in-bangalore",
       menu: "GMB",
     },
   ];
@@ -94,9 +94,9 @@ const Menu = () => {
         <li>
           <Link
             href="/projects"
-            className={pathname === "/about-us" ? "active" : ""}
+            className={pathname === "/project" ? "active" : ""}
           >
-            Projects{" "}
+            Projects
           </Link>
         </li>
         <li>
@@ -105,6 +105,7 @@ const Menu = () => {
             className={pathname === "/services" ? "active" : ""}
           >
             Services
+            <MdKeyboardArrowDown className="serviceIco" />
           </Link>
           <div className="menuDrop-container">
             <ul>
