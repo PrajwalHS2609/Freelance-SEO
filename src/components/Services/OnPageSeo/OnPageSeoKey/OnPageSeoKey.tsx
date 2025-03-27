@@ -1,7 +1,6 @@
 import React from 'react'
 import "@/components/Style/style.css"
 import OnPageSeoKeyHead from './OnPageSeoKeyHead'
-import OnPageSeoHeadMain from '../OnPageSeoHead/OnPageSeoHeadMain'
 import OnPageSeoKeyCard from './OnPageSeoKeyCard'
 const OnPageSeoKey = () => {
   return (
