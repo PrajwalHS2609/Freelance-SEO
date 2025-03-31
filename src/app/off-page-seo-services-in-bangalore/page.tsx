@@ -1,4 +1,8 @@
+import HomeAdv from "@/components/HomePage/HomeAdv/HomeAdv";
+import HomeChoosing from "@/components/HomePage/HomeChoosing/HomeChoosing";
 import HomeHeaderClient from "@/components/HomePage/HomeHeader/HomeHeaderClient";
+import HomeSuccess from "@/components/HomePage/HomeSuccess/HomeSuccess";
+import HomeTestimonial from "@/components/HomePage/HomeTestimonial/HomeTestimonial";
 import OffPageSeoBenefits from "@/components/Services/OffPageSeo/OffPageSeoBenefits";
 import OffPageSeoHeadMain from "@/components/Services/OffPageSeo/OffPageSeoHead/OffPageSeoHeadMain";
 import OffPageSeoHeader from "@/components/Services/OffPageSeo/OffPageSeoHeader";
@@ -23,6 +27,10 @@ export default function OffPageSeo() {
       <HomeHeaderClient />
       <OffPageSeoImp />
       <OffPageSeoKey />
+      <HomeSuccess />
+      <HomeTestimonial />
+      <HomeAdv />
+      <HomeChoosing />
       <OffPageSeoBenefits />
       <OffPageWhy />
     </div>

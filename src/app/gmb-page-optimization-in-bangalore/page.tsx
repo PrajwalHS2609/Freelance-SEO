@@ -1,4 +1,8 @@
+import HomeAdv from "@/components/HomePage/HomeAdv/HomeAdv";
+import HomeChoosing from "@/components/HomePage/HomeChoosing/HomeChoosing";
 import HomeHeaderClient from "@/components/HomePage/HomeHeader/HomeHeaderClient";
+import HomeSuccess from "@/components/HomePage/HomeSuccess/HomeSuccess";
+import HomeTestimonial from "@/components/HomePage/HomeTestimonial/HomeTestimonial";
 import GmbContent from "@/components/Services/Gmb/GmbContent";
 import GmbHeadMain from "@/components/Services/Gmb/GmbHead/GmbHeadMain";
 import GmbHeader from "@/components/Services/Gmb/GmbHeader";
@@ -16,6 +20,10 @@ export default function Gmb() {
       <GmbHeader />
       <GmbHeadMain />
       <HomeHeaderClient />
+      <HomeSuccess />
+      <HomeTestimonial />
+      <HomeAdv />
+      <HomeChoosing />
       <GmbContent />
     </div>
   );

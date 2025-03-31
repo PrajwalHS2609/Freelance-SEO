@@ -92,12 +92,6 @@ const SeoAuditingKeyCard = () => {
           <div className="onPageSeoKey-cardContent">
             <div className="onPageSeoKey-cardImg">
               <img
-                src="https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/Frame-1437254184.jpg"
-                alt=""
-              />
-            </div>
-            <div className="onPageSeoKey-cardImg">
-              <img
                 src="https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/Frame-1437254185.jpg"
                 alt=""
               />
