@@ -43,7 +43,11 @@
   align-items: center;
   flex-direction: column;
 }
-
+.homeServiceMain-cardContent4 > img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
 .homeServiceMain-cardContent4 > p {
   font-size: 18px;
   text-align: justify;

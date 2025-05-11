@@ -1,6 +1,13 @@
+import Image from "next/image";
 import "./HomeServices.css";
 import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
+import seoImg from "@/imgs/homeServices/seo.png"
+import auditImg from "@/imgs/homeServices/audit.png"
+import onPageImg from "@/imgs/homeServices/onpage.png"
+import offPageImg from "@/imgs/homeServices/offpage.png"
+import consultationImg from "@/imgs/homeServices/consultation.png"
+import gmbImg from "@/imgs/homeServices/gmb.png"
 
 export default function HomeServiceMain() {
   const card = [
@@ -9,42 +16,42 @@ export default function HomeServiceMain() {
       head: "SEO",
       para: "Your trusted partner for Boosting Rankings,Driving Traffic, and Increasing Revenue.",
       color: "#FEBFDA",
-      img: "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/Group-1171276180-1.png",
+      img:seoImg,
     },
     {
       id: "2",
       head: "On-Page SEO",
       para: "Our experts optimize every element for Better Rankings and User Experience.",
       color: "#CAC6FD",
-      img: "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/Group-1171276186-1.png",
+      img: onPageImg,
     },
     {
       id: "3",
       head: "Off-Page SEO",
       para: "We build Quality Backlinks and Authority for lasting Search Engine Success.",
       color: "#FFE8A4",
-      img: "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/Group-1171276187-1.png",
+      img: offPageImg,
     },
     {
       id: "4",
       head: "Google My Business Page",
       para: "Boost your local visibility and attract customers with our optimization services. Be where your customers search.",
       color: "#D4FFD6",
-      img: "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/Group-1171276186-1.png",
+      img: gmbImg,
     },
     {
       id: "5",
       head: "SEO Consultation",
       para: "Get expert Insights and Tailored Strategies for your SEO success with our SEO consultation services.",
       color: "#FEBFDA",
-      img: "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/Group-1171276188-1.png",
+      img: consultationImg,
     },
     {
       id: "6",
       head: "SEO Auditing",
       para: "Enhance your website's performance with our thorough SEO Auditing Services. Uncover Optimization Opportunities and Boost Rankings.",
       color: "#CAC6FD",
-      img: "https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/Group-1171276180-1.png",
+      img:auditImg,
     },
   ];
   return (
@@ -59,7 +66,7 @@ export default function HomeServiceMain() {
             <h3>{x.head}</h3>
           </div>
           <div className="homeServiceMain-cardContent4">
-            <img src={x.img} alt={x.head} />
+            <Image src={x.img} alt={x.head} />
           </div>
           <div className="homeServiceMain-cardContent4">
             <p>{x.para}</p>

@@ -1,5 +1,6 @@
+import Image from "next/image";
 import "./HomeHeader.css";
-
+import headerImage from "@/imgs/header-img1.png"
 export default function HomeContentImg() {
   return (
     <>
@@ -9,9 +10,9 @@ export default function HomeContentImg() {
             <div className="circle3"></div>
           </div>
         </div>
-        <img
-          src="https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/header-img1.png"
-          alt=""
+        <Image
+          src={headerImage}
+          alt="Header Image"
         />
       </div>
     </>

@@ -1,5 +1,6 @@
+import Image from "next/image";
 import React from "react";
-
+import SeoImg from "@/imgs/Off-Page SEO Img.jpg"
 const OffPageSeoImp = () => {
   return (
     <div className="serviceWhy-container">
@@ -15,9 +16,9 @@ const OffPageSeoImp = () => {
         </p>
       </div>
       <div className="serviceWhy-content">
-        <img
-          src="https://img.freepik.com/free-photo/homepage-concept-with-search-bar_23-2150040210.jpg?t=st=1742989656~exp=1742993256~hmac=9f030dcf25fe604231f70c047dda5949ec72f28cedbf75b332df4ac3eb58c156&w=1380"
-          alt=""
+        <Image
+          src={SeoImg}
+          alt="Seo Img"
         />
       </div>
     </div>

@@ -6,7 +6,7 @@ import HomeTestimonial from "@/components/HomePage/HomeTestimonial/HomeTestimoni
 import OffPageSeoBenefits from "@/components/Services/OffPageSeo/OffPageSeoBenefits";
 import OffPageSeoHeadMain from "@/components/Services/OffPageSeo/OffPageSeoHead/OffPageSeoHeadMain";
 import OffPageSeoHeader from "@/components/Services/OffPageSeo/OffPageSeoHeader";
-import OffPageSeoImp from "@/components/Services/OffPageSeo/OffPageSeoImp";
+// import OffPageSeoImp from "@/components/Services/OffPageSeo/OffPageSeoImp";
 import OffPageSeoKey from "@/components/Services/OffPageSeo/OffPageSeoKey/OffPageSeoKey";
 import OffPageSeoWhat from "@/components/Services/OffPageSeo/OffPageSeoWhat";
 import OffPageWhy from "@/components/Services/OffPageSeo/OffPageWhy";
@@ -25,7 +25,7 @@ export default function OffPageSeo() {
       <OffPageSeoHeadMain />
       <OffPageSeoWhat />
       <HomeHeaderClient />
-      <OffPageSeoImp />
+      {/* <OffPageSeoImp /> */}
       <OffPageSeoKey />
       <HomeSuccess />
       <HomeTestimonial />

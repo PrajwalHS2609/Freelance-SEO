@@ -4,7 +4,8 @@ import { GiOpenFolder } from "react-icons/gi";
 import { FaUsers } from "react-icons/fa";
 import { RiSpeakFill } from "react-icons/ri";
 import { GiBrain } from "react-icons/gi";
-
+import chooseImg from "@/imgs/chooseImg.png"
+import Image from "next/image";
 export default function HomeChoosingMain() {
   const card = [
     {
@@ -48,9 +49,9 @@ export default function HomeChoosingMain() {
           </div>
         </div>
         <div className="homeChoosingMain-cover">
-          <img
-            src="https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/work-img1-1.png"
-            alt=""
+          <Image
+            src={chooseImg}
+            alt="Choose Image"
           />
         </div>
       </div>

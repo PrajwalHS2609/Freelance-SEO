@@ -1,5 +1,7 @@
 import React from "react";
 import "@/components/Style/style.css";
+import Image from "next/image";
+import keyImg from "@/imgs/homeAbout/aboutImg1.jpg";
 
 const SeoAuditingKeyCard = () => {
   const key = [
@@ -91,10 +93,7 @@ const SeoAuditingKeyCard = () => {
           </div>
           <div className="onPageSeoKey-cardContent">
             <div className="onPageSeoKey-cardImg">
-              <img
-                src="https://wp.fleexstudio.com/seoc/wp-content/uploads/2024/08/Frame-1437254185.jpg"
-                alt=""
-              />
+              <Image src={keyImg} alt={x.title} />
             </div>
           </div>
         </div>

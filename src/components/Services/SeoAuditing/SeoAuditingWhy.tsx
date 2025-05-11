@@ -1,9 +1,11 @@
 import React from "react";
+import SeoImg from "@/imgs/Off-Page SEO Img.jpg";
+import Image from "next/image";
 
 const SeoAuditingWhy = () => {
   return (
     <div className="serviceWhy-container" id="serviceWhy-container1">
-      <div className="serviceWhy-content" >
+      <div className="serviceWhy-content">
         <h2>Why Are SEO Auditing Services in Bangalore Important?</h2>
         <p>
           Investing in SEO Auditing Services in Bangalore is essential for
@@ -15,10 +17,7 @@ const SeoAuditingWhy = () => {
         </p>
       </div>
       <div className="serviceWhy-content">
-        <img
-          src="https://img.freepik.com/free-photo/homepage-concept-with-search-bar_23-2150040210.jpg?t=st=1742989656~exp=1742993256~hmac=9f030dcf25fe604231f70c047dda5949ec72f28cedbf75b332df4ac3eb58c156&w=1380"
-          alt=""
-        />
+        <Image src={SeoImg} alt="Seo Img" />
       </div>
     </div>
   );
