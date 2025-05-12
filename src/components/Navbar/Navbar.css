@@ -47,7 +47,13 @@
   justify-content: center;
   align-items: center;
 }
-
+.menu-content1 > li:nth-child(3) {
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
+  cursor: default;
+}
 .menu-content1 > li > a {
   color: black;
   font-size: 18px;
@@ -115,8 +121,9 @@
   color: var(--customColor);
   transform: translateX(10px);
 }
-.serviceIco{
-  color: var(--customColor);font-size: 30px;
+.serviceIco {
+  color: var(--customColor);
+  font-size: 30px;
 }
 /* --------------Responsive Menu----------------------- */
 .menu-content2 {
@@ -220,7 +227,10 @@
   justify-content: space-between;
   align-items: center;
 }
-
+.respMenuList > span:nth-child(1) {
+  color: var(--customColor);
+  font-size: 20px;
+}
 .respMenuList > span {
   font-size: 30px;
   margin-right: 30px;

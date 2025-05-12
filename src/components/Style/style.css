@@ -448,3 +448,55 @@
   color: var(--customColor);
   font-size: 30px;
 }
+/* ------------------------------------------------------------------------------------- */
+
+.serviceContent-HeadContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.serviceContent-HeadContainer > p > strong {
+  font-size: 20px;
+  text-align: start;
+  padding: 20px;
+  color: var(--customColor);
+}
+.serviceContent-HeadContainer > p {
+  font-size: 18px;
+  text-align: justify;
+  padding: 20px;
+}
+.serviceContent-HeadContainer > p > a {
+  text-decoration: none;
+  color: var(--customColor);
+}
+.serviceContent-HeadContainer > h1 {
+  color: var(--customColor);
+  text-align: center;
+}
+
+.serviceContent-HeadContainer > h2 {
+  color: var(--customColor);
+  text-align: start;
+  width: 100%;
+}
+
+.serviceContent-HeadContainer > h3 {
+  color: var(--customColor);
+  text-align: start;
+  width: 100%;
+}
+.serviceContent-HeadContainer > p {
+  width: 100%;
+}
+.serviceContent-HeadContainer > ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}

@@ -100,13 +100,8 @@ const Menu = () => {
           </Link>
         </li>
         <li>
-          <Link
-            href="/services"
-            className={pathname === "/services" ? "active" : ""}
-          >
-            Services
-            <MdKeyboardArrowDown className="serviceIco" />
-          </Link>
+          Services
+          <MdKeyboardArrowDown className="serviceIco" />
           <div className="menuDrop-container">
             <ul>
               {serviceMenu.map((x) => (
@@ -171,13 +166,7 @@ const Menu = () => {
             </li>
             <li>
               <div className="respMenuList">
-                <Link
-                  href="/services"
-                  className={pathname === "/services" ? "active" : ""}
-                  onClick={hideSideBar}
-                >
-                  Services
-                </Link>
+                <span>Services</span>
                 <span>
                   <AiOutlinePlus className="plus" onClick={handleDrop} />
                 </span>

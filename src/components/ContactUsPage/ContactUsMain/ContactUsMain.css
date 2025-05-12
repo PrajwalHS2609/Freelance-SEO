@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  background-color: var(--customWhite);
 }
 .contactUsMain-content {
   /* border: solid green; */
@@ -88,6 +89,7 @@
   box-shadow: 0 0 10px grey;
   border-radius: 10px;
   padding: 20px;
+  background-color:white;
 }
 .contactUsForm > h6 {
   color: var(--customColor);
