@@ -6,12 +6,12 @@ import type { Metadata } from "next";
 // CSS for both post and service
 import "@/components/BlogPage/BlogPage.css";
 import "@/components/Style/style.css";
-import HomeHeader from "@/components/HomePage/HomeHeader/HomeHeader";
 import BlogSidebar from "@/components/BlogPage/BlogSidebar/BlogSidebar";
 import HomeSuccess from "@/components/HomePage/HomeSuccess/HomeSuccess";
 import HomeTestimonial from "@/components/HomePage/HomeTestimonial/HomeTestimonial";
 import HomeAdv from "@/components/HomePage/HomeAdv/HomeAdv";
 import HomeChoosing from "@/components/HomePage/HomeChoosing/HomeChoosing";
+import SlugHeader from "@/components/SlugComponents/SlugHeader";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   _id,
@@ -97,7 +97,7 @@ export default async function SlugPage({
         ) : null}
         {!isPost && (
           <>
-            <HomeHeader />
+            <SlugHeader heading={content.title} />
           </>
         )}
         <div
