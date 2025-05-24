@@ -12,6 +12,7 @@ import HomeTestimonial from "@/components/HomePage/HomeTestimonial/HomeTestimoni
 import HomeAdv from "@/components/HomePage/HomeAdv/HomeAdv";
 import HomeChoosing from "@/components/HomePage/HomeChoosing/HomeChoosing";
 import SlugHeader from "@/components/SlugComponents/SlugHeader";
+import BlogAuthor from "@/components/BlogPage/BlogAuthor/BlogAuthor";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   _id,
@@ -22,8 +23,11 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   metaDescription,
   mainImage {
     asset->{ _id, url }
-  }
-}`;
+  },
+  source {
+    text,
+    url
+  }}`;
 
 const SERVICE_QUERY = `*[_type == "ServiceCategory" && slug.current == $slug][0]{
   _id,
@@ -113,11 +117,28 @@ export default async function SlugPage({
             <h1>{content.title}</h1>
             {/* Render body only for posts */}
             {isPost && Array.isArray(content.body) && (
-              <PortableText value={content.body} />
+              <>
+                <PortableText value={content.body} />
+                {content.source?.url && content.source?.text && (
+                  <p className="source-link">
+                    Source:{" "}
+                    <a
+                      href={content.source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {content.source.text}
+                    </a>
+                  </p>
+                )}
+                <BlogAuthor />
+              </>
             )}
           </div>
           {!isPost && Array.isArray(content.body1) && (
-            <PortableText value={content.body1} />
+            <>
+              <PortableText value={content.body1} />
+            </>
           )}
         </div>
         {!isPost && Array.isArray(content.body1) && (

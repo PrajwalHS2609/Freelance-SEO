@@ -488,6 +488,14 @@
   width: 20px;
   height: 20px;
 }
+
+.source-link {
+  font-weight: 500;
+}
+.source-link > a {
+  color: var(--customColor);
+  text-decoration: underline !important;
+}
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .blogHead-content {
     /* border: solid blue; */

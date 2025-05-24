@@ -20,6 +20,23 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'source',
+      title: 'Source',
+      type: 'object',
+      fields: [
+        {
+          name: 'text',
+          title: 'Link Text',
+          type: 'string',
+        },
+        {
+          name: 'url',
+          title: 'URL',
+          type: 'url',
+        },
+      ],
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
@@ -32,6 +49,12 @@ export default defineType({
       name: 'description',
       title: 'Description',
       type: 'text',
+    }),
+    defineField({
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: [{type: 'author'}],
     }),
     defineField({
       name: 'body',
