@@ -15,6 +15,8 @@ import arra from "./clientsImgs/Arrasuites.png";
 import mm from "./clientsImgs/MM.png";
 import scent from "./clientsImgs/Scent.png";
 import buildurspace from "./clientsImgs/BuildUrSpace.png";
+import twirl from "./clientsImgs/twirl.jpg";
+
 import "./HomeHeader.css";
 
 export default function HomeHeaderClient() {
@@ -37,7 +39,6 @@ export default function HomeHeaderClient() {
       items: 1,
     },
   };
-
 
   return (
     <div className="homeHeader-client">
@@ -127,6 +128,11 @@ export default function HomeHeaderClient() {
           <div>
             <div className="item">
               <Image src={buildurspace} alt="buildurspace" loading="lazy" />
+            </div>
+          </div>
+          <div>
+            <div className="item">
+              <Image src={twirl} alt="twirl" loading="lazy" />
             </div>
           </div>
         </Carousel>
