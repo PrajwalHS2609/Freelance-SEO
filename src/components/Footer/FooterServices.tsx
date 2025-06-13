@@ -41,6 +41,11 @@ export default function FooterService() {
             Google My Business Service
           </Link>
         </li>
+                <li>
+          <Link href="/blog" className={pathname === "/blog" ? "active" : ""}>
+            Blog
+          </Link>
+        </li>
         <li>
           <Link href="/other-services" style={{ color: "transparent" }}>
             OtherServices

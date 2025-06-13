@@ -71,7 +71,12 @@
   width: 100%;
   opacity: 1;
 }
-
+.main-container > h2 {
+  /* border: solid ; */
+  color: var(--customColor);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .serviceHead-container h2 {
     font-size: 40px;

@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import { SITEMAP_QUERY } from "../../sanity/lib/queries";
 import { client } from "@/sanity/client";
 
+export const revalidate = 0;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const paths = await client.fetch(SITEMAP_QUERY);
@@ -33,6 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       "/gmb-page-optimization-in-bangalore",
       "/about-us",
       "/contact-us",
+      "/others"
     ].map((path) => ({
       url: new URL(path, baseUrl).toString(),
       lastModified: new Date("2024-12-31"), // or best guess
