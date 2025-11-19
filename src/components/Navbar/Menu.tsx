@@ -12,6 +12,12 @@ import Image from "next/image";
 
 const Menu = () => {
   const pathname = usePathname();
+  const firstSegment = pathname.split("/")[1];
+
+  // If user is on /in/... use "in", if /ae/... use "ae", else empty
+  const countryPrefix = ["in", "ae", "de"].includes(firstSegment)
+    ? `/${firstSegment}`
+    : "";
   const [drop, setDrop] = useState(false);
   const dropRef = useRef<HTMLDivElement | null>(null); // Explicitly typed ref
   // const handlePopUp = () => {};
@@ -93,8 +99,8 @@ const Menu = () => {
         </li>
         <li>
           <Link
-            href="/projects"
-            className={pathname === "/project" ? "active" : ""}
+            href={`${countryPrefix}/projects`}
+            className={pathname === `${countryPrefix}/projects` ? "active" : ""}
           >
             Projects
           </Link>
@@ -107,8 +113,8 @@ const Menu = () => {
               {serviceMenu.map((x) => (
                 <li key={x.id}>
                   <Link
-                    href={x.pathName}
-                    className={pathname === x.pathName ? "active" : ""}
+                    href={`${countryPrefix}/${x.pathName}`}
+                    className={pathname === `${countryPrefix}/${x.pathName}` ? "active" : ""}
                   >
                     {x.menu}
                   </Link>
@@ -119,16 +125,16 @@ const Menu = () => {
         </li>
         <li>
           <Link
-            href="/about-us"
-            className={pathname === "/about-us" ? "active" : ""}
+            href={`${countryPrefix}/about-us`}
+            className={pathname === `${countryPrefix}/about-us` ? "active" : ""}
           >
             About Us
           </Link>
         </li>
         <li>
           <Link
-            href="/contact-us"
-            className={pathname === "/contact-us" ? "active" : ""}
+            href={`${countryPrefix}/contact-us`}
+            className={pathname === `${countryPrefix}/contact-us` ? "active" : ""}
           >
             Contact Us
           </Link>
@@ -157,8 +163,8 @@ const Menu = () => {
             </li>
             <li>
               <Link
-                href="/projects"
-                className={pathname === "/about-us" ? "active" : ""}
+                href={`${countryPrefix}/projects`}
+                className={pathname === `${countryPrefix}/projects` ? "active" : ""}
                 onClick={hideSideBar}
               >
                 Projects{" "}
@@ -177,8 +183,8 @@ const Menu = () => {
                   {serviceMenu.map((x) => (
                     <li key={x.id}>
                       <Link
-                        href={x.pathName}
-                        className={pathname === x.pathName ? "active" : ""}
+                        href={`${countryPrefix}/${x.pathName}`}
+                        className={pathname === `${countryPrefix}/${x.pathName}` ? "active" : ""}
                         onClick={hideSideBar}
                       >
                         {x.menu}
@@ -191,8 +197,8 @@ const Menu = () => {
             <li>
               {" "}
               <Link
-                href="/about-us"
-                className={pathname === "/about-us" ? "active" : ""}
+                href={`${countryPrefix}//about-us`}
+                className={pathname === `${countryPrefix}//about-us` ? "active" : ""}
                 onClick={hideSideBar}
               >
                 About Us
@@ -202,8 +208,8 @@ const Menu = () => {
             <li>
               {" "}
               <Link
-                href="/contact-us"
-                className={pathname === "/contact-us" ? "active" : ""}
+                href={`${countryPrefix}/contact-us`}
+                className={pathname === `${countryPrefix}/contact-us` ? "active" : ""}
                 onClick={hideSideBar}
               >
                 Contact Us
