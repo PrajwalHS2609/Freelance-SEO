@@ -20,41 +20,50 @@ export default function Home() {
     async function detectCountry() {
       const currentPath = window.location.pathname;
 
-      // Check if already inside a country folder → STOP redirect
+      // Extract first path segment ( /in/contact → "in" )
       const firstSegment = currentPath.split("/")[1];
-      const allowedPrefixes = ["in", "ae","de",];
 
+      // Supported country folders
+      const allowedPrefixes = ["in", "ae", "de"];
+
+      // If already inside supported folder → show page
       if (allowedPrefixes.includes(firstSegment)) {
         setIsRedirecting(false);
         return;
       }
 
       try {
-        // Fetch IP location (NO Vercel interference)
+        // Get visitor country
         const res = await fetch("https://ipapi.co/json/");
         const data = await res.json();
 
         const country = data.country || "OTHER";
 
+        // Map country to folder
         const COUNTRY_MAP: Record<string, string> = {
           IN: "in",
           AE: "ae",
-          DE:"de",
+          DE: "de",
         };
 
         const matchedCountry = COUNTRY_MAP[country];
 
-        // If matched → redirect to /in or /ae
+        // ✔ If matched → redirect and keep full path
         if (matchedCountry) {
           window.location.replace(`/${matchedCountry}${currentPath}`);
           return;
         }
 
-        // If non-supported country → STOP redirect → show default homepage
-        setIsRedirecting(false);
+        // ❗ If NOT supported → redirect ONLY to homepage
+        if (currentPath !== "/") {
+          window.location.replace("/");
+          return;
+        }
 
+        // Allow homepage to load
+        setIsRedirecting(false);
       } catch {
-        // On API failure → show default homepage
+        // On error → let user see homepage
         setIsRedirecting(false);
       }
     }
