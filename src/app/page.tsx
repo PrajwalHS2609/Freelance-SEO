@@ -22,7 +22,7 @@ export default function Home() {
 
       // Check if already inside a country folder → STOP redirect
       const firstSegment = currentPath.split("/")[1];
-      const allowedPrefixes = ["in", "ae"];
+      const allowedPrefixes = ["in", "ae","de",];
 
       if (allowedPrefixes.includes(firstSegment)) {
         setIsRedirecting(false);
@@ -39,6 +39,7 @@ export default function Home() {
         const COUNTRY_MAP: Record<string, string> = {
           IN: "in",
           AE: "ae",
+          DE:"de",
         };
 
         const matchedCountry = COUNTRY_MAP[country];
