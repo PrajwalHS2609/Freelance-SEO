@@ -32,7 +32,6 @@ export default function Home() {
         if (firstSegment !== redirectTo) {
           window.location.replace(`/${redirectTo}${currentPath}`);
         }
-
       } catch {
         // fallback → India
         window.location.replace("/in" + currentPath);
@@ -43,15 +42,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div
-      style={{
-        padding: "40px",
-        textAlign: "center",
-        fontSize: "22px",
-        fontWeight: "600",
-      }}
-    >
-      Detecting your region… Redirecting…
+    <div className="loader-wrapper">
+      <div className="spinner"></div>
+      {/* <p>Detecting your region...</p> */}
     </div>
   );
 }
