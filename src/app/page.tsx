@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-/* 👉 Default homepage components */
+/* Homepage components */
 import HomeHeader from "@/components/HomePage/HomeHeader/HomeHeader";
 import HomeServices from "@/components/HomePage/HomeServices/HomeServices";
 import HomeSuccess from "@/components/HomePage/HomeSuccess/HomeSuccess";
@@ -19,51 +19,43 @@ export default function Home() {
   useEffect(() => {
     async function detectCountry() {
       const currentPath = window.location.pathname;
-
-      // Extract first path segment ( /in/contact → "in" )
       const firstSegment = currentPath.split("/")[1];
 
-      // Supported country folders
-      const allowedPrefixes = ["in", "ae", "de"];
+      const allowedPrefixes = ["in", "ae", "de"]; // supported countries
 
-      // If already inside supported folder → show page
+      // 👇 If already inside country folder → allow page
       if (allowedPrefixes.includes(firstSegment)) {
         setIsRedirecting(false);
         return;
       }
 
       try {
-        // Get visitor country
         const res = await fetch("https://ipapi.co/json/");
         const data = await res.json();
 
-        const country = data.country || "OTHER";
-
-        // Map country to folder
         const COUNTRY_MAP: Record<string, string> = {
           IN: "in",
           AE: "ae",
           DE: "de",
         };
 
-        const matchedCountry = COUNTRY_MAP[country];
+        const matchedCountry = COUNTRY_MAP[data.country];
 
-        // ✔ If matched → redirect and keep full path
+        // ✔ If supported → redirect to same page inside country folder
         if (matchedCountry) {
           window.location.replace(`/${matchedCountry}${currentPath}`);
           return;
         }
 
-        // ❗ If NOT supported → redirect ONLY to homepage
+        // ❗ IF unsupported country
+        // Should always redirect to "/" only ONCE
         if (currentPath !== "/") {
           window.location.replace("/");
           return;
         }
 
-        // Allow homepage to load
         setIsRedirecting(false);
       } catch {
-        // On error → let user see homepage
         setIsRedirecting(false);
       }
     }
@@ -71,9 +63,7 @@ export default function Home() {
     detectCountry();
   }, []);
 
-  /* ----------------------------------------
-      LOADING SCREEN (while detecting)
-  ----------------------------------------- */
+  /* Loading screen */
   if (isRedirecting) {
     return (
       <div className="loader-wrapper">
@@ -82,9 +72,7 @@ export default function Home() {
     );
   }
 
-  /* ----------------------------------------
-      DEFAULT HOMEPAGE (for USA, UK, etc.)
-  ----------------------------------------- */
+  /* Default homepage */
   return (
     <div className="main-block">
       <HomeHeader />
