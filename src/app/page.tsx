@@ -20,7 +20,7 @@ export default function Home() {
     async function detectCountry() {
       const currentPath = window.location.pathname;
 
-      // Check if already inside a country folder → STOP redirect
+      // Already inside a country folder → STOP redirect
       const firstSegment = currentPath.split("/")[1];
       const allowedPrefixes = ["in", "ae"];
 
@@ -30,11 +30,11 @@ export default function Home() {
       }
 
       try {
-        // Fetch IP location (NO Vercel interference)
-        const res = await fetch("https://ipapi.co/json/");
+        // ⭐ NEW API → works 100% on Vercel
+        const res = await fetch("https://ipinfo.io/json?token=2d2364c7c4b4e9");
         const data = await res.json();
 
-        const country = data.country || "OTHER";
+        const country = (data.country || "OTHER").toUpperCase();
 
         const COUNTRY_MAP: Record<string, string> = {
           IN: "in",
@@ -43,17 +43,18 @@ export default function Home() {
 
         const matchedCountry = COUNTRY_MAP[country];
 
-        // If matched → redirect to /in or /ae
+        // If supported → redirect
         if (matchedCountry) {
           window.location.replace(`/${matchedCountry}${currentPath}`);
           return;
         }
 
-        // If non-supported country → STOP redirect → show default homepage
+        // Not supported → show default homepage
         setIsRedirecting(false);
 
-      } catch {
-        // On API failure → show default homepage
+      } catch (e) {
+        console.error("Country detection failed", e);
+        // API failed → show default homepage
         setIsRedirecting(false);
       }
     }
@@ -61,9 +62,6 @@ export default function Home() {
     detectCountry();
   }, []);
 
-  /* ----------------------------------------
-      LOADING SCREEN (while detecting)
-  ----------------------------------------- */
   if (isRedirecting) {
     return (
       <div className="loader-wrapper">
@@ -72,9 +70,6 @@ export default function Home() {
     );
   }
 
-  /* ----------------------------------------
-      DEFAULT HOMEPAGE (for USA, UK, etc.)
-  ----------------------------------------- */
   return (
     <div className="main-block">
       <HomeHeader />
