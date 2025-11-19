@@ -23,6 +23,7 @@ const CATEGORY_POSTS_QUERY = `
     }
   }
 `;
+export const revalidate = 0;
 
 export default async function CategoryPage({
   params,

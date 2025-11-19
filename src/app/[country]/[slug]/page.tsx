@@ -13,6 +13,7 @@ import HomeAdv from "@/components/HomePage/HomeAdv/HomeAdv";
 import HomeChoosing from "@/components/HomePage/HomeChoosing/HomeChoosing";
 import SlugHeader from "@/components/SlugComponents/SlugHeader";
 import BlogAuthor from "@/components/BlogPage/BlogAuthor/BlogAuthor";
+import { portableTextComponents } from "@/components/PortableTextComponents";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   _id,
@@ -118,7 +119,10 @@ export default async function SlugPage({
             {/* Render body only for posts */}
             {isPost && Array.isArray(content.body) && (
               <>
-                <PortableText value={content.body} />
+                <PortableText
+                  value={content.body}
+                  components={portableTextComponents}
+                />
                 {content.source?.url && content.source?.text && (
                   <p className="source-link">
                     Source:{" "}
@@ -137,7 +141,10 @@ export default async function SlugPage({
           </div>
           {!isPost && Array.isArray(content.body1) && (
             <>
-              <PortableText value={content.body1} />
+              <PortableText
+                value={content.body1}
+                components={portableTextComponents}
+              />
             </>
           )}
         </div>
@@ -155,7 +162,10 @@ export default async function SlugPage({
           }
         >
           {!isPost && Array.isArray(content.body2) && (
-            <PortableText value={content.body2} />
+            <PortableText
+              value={content.body2}
+              components={portableTextComponents}
+            />
           )}
         </div>
       </div>

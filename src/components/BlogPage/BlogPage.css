@@ -77,6 +77,14 @@
   font-weight: bold;
   letter-spacing: 2px;
 }
+.blog-subContainer {
+  /* border: solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .serviceHead-container h2 {
     font-size: 40px;

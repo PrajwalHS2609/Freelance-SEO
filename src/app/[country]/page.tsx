@@ -3,10 +3,10 @@ import HomeTestimonial from "@/components/HomePage/HomeTestimonial/HomeTestimoni
 import HomeServices from "@/components/HomePage/HomeServices/HomeServices";
 import HomeAbout from "@/components/HomePage/HomeAbout/HomeAbout";
 import HomeAdv from "@/components/HomePage/HomeAdv/HomeAdv";
-import HomeFaq from "./../components/HomePage/HomeFaq/HomeFaq";
 import HomeChoosing from "@/components/HomePage/HomeChoosing/HomeChoosing";
 import HomeSeoPractices from "@/components/HomePage/HomeSeoPractices/HomeSeoPractices";
 import HomeSuccess from "@/components/HomePage/HomeSuccess/HomeSuccess";
+import HomeFaq from "@/components/HomePage/HomeFaq/HomeFaq";
 export const metadata = {
   title: "Best SEO Services in Bangalore for Small Business and eCommerce",
   description: "Best SEO Services in Bangalore for Small Business and eCommerce at Affordable Price. For Consultation, Auditing, On-Page and Off Page, Local SEO .",

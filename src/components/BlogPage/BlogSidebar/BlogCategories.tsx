@@ -8,6 +8,8 @@ const CATEGORY_QUERY = `*[_type == "blogCategory"] | order(title asc){
   title,
   slug
 }`;
+export const revalidate = 0;
+
 export default async function BlogCategories() {
   const categories = await client.fetch<SanityDocument[]>(CATEGORY_QUERY);
   return (
