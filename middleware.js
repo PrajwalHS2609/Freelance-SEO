@@ -3,17 +3,17 @@ import { NextResponse } from "next/server";
 export function middleware(req) {
   const url = req.nextUrl.clone();
 
-  // If path already starts with /in/, do nothing
+  // If URL already starts with /in → allow
   if (url.pathname.startsWith("/in")) {
     return NextResponse.next();
   }
 
-  // Skip files like images, css, js, etc.
-  if (url.pathname.includes(".") || url.pathname.startsWith("/_next")) {
+  // Skip static files
+  if (url.pathname.startsWith("/_next") || url.pathname.includes(".")) {
     return NextResponse.next();
   }
 
-  // Redirect EVERY non-country URL to /in/<path>
+  // Redirect all others
   url.pathname = `/in${url.pathname}`;
   return NextResponse.redirect(url);
 }
