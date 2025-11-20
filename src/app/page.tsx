@@ -14,57 +14,26 @@ import HomeAdv from "@/components/HomePage/HomeAdv/HomeAdv";
 import HomeChoosing from "@/components/HomePage/HomeChoosing/HomeChoosing";
 
 export default function Home() {
-  const [isRedirecting, setIsRedirecting] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function detectCountry() {
-      const currentPath = window.location.pathname;
-      const firstSegment = currentPath.split("/")[1];
+    const currentPath = window.location.pathname;
 
-      const allowedPrefixes = ["in", "ae", "de"]; // supported countries
+    const allowedPrefixes = ["in", "ae", "de"]; // folders you have
 
-      // 👇 If already inside country folder → allow page
-      if (allowedPrefixes.includes(firstSegment)) {
-        setIsRedirecting(false);
-        return;
-      }
+    const firstSegment = currentPath.split("/")[1];
 
-      try {
-        const res = await fetch("https://ipapi.co/json/");
-        const data = await res.json();
-
-        const COUNTRY_MAP: Record<string, string> = {
-          IN: "in",
-          AE: "ae",
-          DE: "de",
-        };
-
-        const matchedCountry = COUNTRY_MAP[data.country];
-
-        // ✔ If supported → redirect to same page inside country folder
-        if (matchedCountry) {
-          window.location.replace(`/${matchedCountry}${currentPath}`);
-          return;
-        }
-
-        // ❗ IF unsupported country
-        // Should always redirect to "/" only ONCE
-        if (currentPath !== "/") {
-          window.location.replace("/");
-          return;
-        }
-
-        setIsRedirecting(false);
-      } catch {
-        setIsRedirecting(false);
-      }
+    // 👉 If already inside a country folder → show that page
+    if (allowedPrefixes.includes(firstSegment)) {
+      setLoading(false);
+      return;
     }
 
-    detectCountry();
+    // 👉 Otherwise ALWAYS redirect to India's /in/ version of that page
+    window.location.replace(`/in${currentPath}`);
   }, []);
 
-  /* Loading screen */
-  if (isRedirecting) {
+  if (loading) {
     return (
       <div className="loader-wrapper">
         <div className="spinner"></div>
@@ -72,7 +41,6 @@ export default function Home() {
     );
   }
 
-  /* Default homepage */
   return (
     <div className="main-block">
       <HomeHeader />
