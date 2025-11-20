@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 
 /* Homepage components */
 import HomeHeader from "@/components/HomePage/HomeHeader/HomeHeader";
@@ -14,6 +13,8 @@ import HomeAdv from "@/components/HomePage/HomeAdv/HomeAdv";
 import HomeChoosing from "@/components/HomePage/HomeChoosing/HomeChoosing";
 
 export default function Home() {
+
+
   return (
     <div className="main-block">
       <HomeHeader />
