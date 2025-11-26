@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-// Fix TypeScript type for geo
+// Extend NextRequest type to fix geo TypeScript error
 declare module "next/server" {
   interface NextRequest {
     geo?: {
@@ -14,38 +14,50 @@ declare module "next/server" {
 
 export function middleware(req: NextRequest) {
   const url = req.nextUrl;
+  const { pathname } = url;
 
-  // Skip all Next.js internal and static assets
+  // 🔥 Skip assets and API routes
   if (
-    url.pathname.startsWith("/_next") ||
-    url.pathname.startsWith("/favicon") ||
-    url.pathname.startsWith("/robots") ||
-    url.pathname.startsWith("/sitemap") ||
-    url.pathname.startsWith("/static") ||
-    url.pathname.startsWith("/images") ||
-    url.pathname.startsWith("/api")
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/favicon") ||
+    pathname.startsWith("/robots") ||
+    pathname.startsWith("/sitemap") ||
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/images") ||
+    pathname.startsWith("/static")
   ) {
     return NextResponse.next();
   }
 
-  // Detect user's country
-  const country = req.geo?.country?.toLowerCase() || "in";
+  // 🔥 Allowed country prefixes
+  const allowedCountries = ["in", "de", "ae", "us", "uk", "ca"];
 
-  const first = url.pathname.split("/")[1];
+  const firstSegment = pathname.split("/")[1];
 
-  // Allow if already in /in /de /ae
-  if (["in", "de", "ae"].includes(first)) {
+  // 🔥 If path already starts with a valid country → allow
+  if (allowedCountries.includes(firstSegment)) {
     return NextResponse.next();
   }
 
-  // Root redirect
-  if (url.pathname === "/") {
+  // 🔥 Detect user's country
+  let country = req.geo?.country?.toLowerCase() || "in";
+
+  // Convert GB → UK
+  if (country === "gb") country = "uk";
+
+  // If unsupported country → default to IN
+  if (!allowedCountries.includes(country)) {
+    country = "in";
+  }
+
+  // 🔥 If visiting root domain → redirect to /country
+  if (pathname === "/") {
     url.pathname = `/${country}`;
     return NextResponse.redirect(url);
   }
 
-  // Auto-prefix content pages
-  url.pathname = `/${country}${url.pathname}`;
+  // 🔥 For any other page → prefix country
+  url.pathname = `/${country}${pathname}`;
   return NextResponse.redirect(url);
 }
 
