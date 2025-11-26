@@ -2,12 +2,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "@/components/Navbar/Navbar";
 import "./global.css";
 import Footer from "@/components/Footer/Footer";
+export const dynamic = "force-dynamic";
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
+
+    
     <html lang="en">
       <head>
         <link rel="icon" type="image/png" href="/faviconPerfect.png" />
@@ -18,6 +22,7 @@ export default function RootLayout({
         {/* ---gtag--- */}
       </head>
       <body>
+        
         <Navbar />
         <main> {children}</main>
         <Footer />
