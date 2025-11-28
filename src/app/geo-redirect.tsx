@@ -9,7 +9,7 @@ export default function GeoRedirect() {
         const res = await fetch("https://ipapi.co/json/");
         const data = await res.json();
 
-        let country = data?.country_code || "IN";
+        const country = data?.country_code || "IN";
 
         // // 💡 For localhost testing → manually switch the country
         // if (window.location.hostname === "localhost") {
