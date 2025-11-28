@@ -1,57 +1,63 @@
-// "use client";
+"use client";
 
-// import { useEffect } from "react";
+import { useEffect } from "react";
 
-// export default function GeoRedirect() {
-//   useEffect(() => {
-//     // prevent redirect on localhost
-//     if (window.location.hostname === "localhost") return;
+export default function GeoRedirect() {
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
 
-//     (async () => {
-//       try {
-//         const res = await fetch("https://ipapi.co/json/");
-//         const data = await res.json();
+        let country = data?.country_code || "IN";
 
-//         let country = data?.country_code || "IN";
+        // 💡 For localhost testing → manually switch the country
+        if (window.location.hostname === "localhost") {
+          country = "DE";  
+          // change to "US", "AE", "CA", "UK", "IN" to test different regions
+        }
 
-//         const redirectMap: Record<string, string> = {
-//           IN: "/in",
-//           US: "/us",
-//           CA: "/ca",
-//           UK: "/uk",
-//           AU: "/au",
-//           DE: "/de",
-//           FR: "/fr",
-//           AE: "/ae",
-//           SA: "/sa",
-//           IT: "/it",
-//           NL: "/nl",
-//           MY: "/my",
-//           QA: "/qa",
-//           PL: "/pl",
-//         };
+        const redirectMap: Record<string, string> = {
+          IN: "/in",
+          US: "/us",
+          CA: "/ca",
+          UK: "/uk",
+          AU: "/au",
+          DE: "/de",
+          FR: "/fr",
+          AE: "/ae",
+          SA: "/sa",
+          IT: "/it",
+          NL: "/nl",
+          MY: "/my",
+          QA: "/qa",
+          PL: "/pl",
+        };
 
-//         // current path
-//         const path = window.location.pathname;
+        const path = window.location.pathname;
 
-//         // first segment
-//         const seg = path.split("/")[1]?.toLowerCase();
+        // get first URL segment
+        const seg = path.split("/")[1]?.toLowerCase();
 
-//         // check if already has country prefix
-//         const prefixes = Object.values(redirectMap).map((p) =>
-//           p.replace("/", "").toLowerCase()
-//         );
+        const prefixes = Object.values(redirectMap).map((p) =>
+          p.replace("/", "").toLowerCase()
+        );
 
-//         if (prefixes.includes(seg)) return;
+        // if already has prefix — don't redirect
+        if (prefixes.includes(seg)) return;
 
-//         // redirect
-//         const prefix = redirectMap[country] || "/in";
-//         window.location.replace(prefix + path);
-//       } catch (err) {
-//         console.error("Geo redirect failed:", err);
-//       }
-//     })();
-//   }, []);
+        const prefix = redirectMap[country] || "/in";
 
-//   return null;
-// }
+        // Save for use in links (AutoLocalLink)
+        localStorage.setItem("countryPrefix", prefix);
+
+        // redirect
+        window.location.replace(prefix + path);
+      } catch (err) {
+        console.error("Geo redirect failed:", err);
+      }
+    })();
+  }, []);
+
+  return null;
+}
