@@ -11,11 +11,11 @@ export default function GeoRedirect() {
 
         let country = data?.country_code || "IN";
 
-        // 💡 For localhost testing → manually switch the country
-        if (window.location.hostname === "localhost") {
-          country = "DE";  
-          // change to "US", "AE", "CA", "UK", "IN" to test different regions
-        }
+        // // 💡 For localhost testing → manually switch the country
+        // if (window.location.hostname === "localhost") {
+        //   country = "DE","US", "AE", "CA", "UK", "IN";  
+        //   // change to "US", "AE", "CA", "UK", "IN" to test different regions
+        // }
 
         const redirectMap: Record<string, string> = {
           IN: "/in",
